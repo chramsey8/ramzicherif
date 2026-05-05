@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CHERIF RAMZI | Digital Creative</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&amp;family=Sora:wght@600&amp;family=Inter:wght@400;500&amp;family=Orbitron:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "error": "#ffb4ab",
+                "on-tertiary": "#003737",
+                "outline-variant": "#3a494b",
+                "secondary-fixed-dim": "#63E5C7",
+                "error-container": "#93000a",
+                "tertiary": "#7AF2E3",
+                "on-secondary": "#003828",
+                "surface-dim": "#08152E",
+                "inverse-on-surface": "#2a3041",
+                "surface-container-low": "#10264A",
+                "on-background": "#dce2f8",
+                "surface": "#08152E",
+                "inverse-surface": "#dce2f8",
+                "outline": "#849495",
+                "tertiary-fixed-dim": "#46E0D0",
+                "on-surface-variant": "#b9cacb",
+                "on-secondary-fixed-variant": "#00513c",
+                "tertiary-container": "#47f1f1",
+                "primary-container": "#46E0D0",
+                "tertiary-fixed": "#7AF2E3",
+                "primary": "#7AF2E3",
+                "on-surface": "#dce2f8",
+                "secondary-fixed": "#63E5C7",
+                "on-primary-fixed-variant": "#004f54",
+                "on-secondary-container": "#007255",
+                "surface-tint": "#46E0D0",
+                "secondary-container": "#63E5C7",
+                "secondary": "#ffffff",
+                "on-secondary-fixed": "#002116",
+                "background": "#08152E",
+                "surface-container-highest": "#2e3445",
+                "on-tertiary-container": "#006b6b",
+                "inverse-primary": "#00696f",
+                "on-primary-container": "#006a71",
+                "primary-fixed-dim": "#46E0D0",
+                "on-tertiary-fixed-variant": "#004f50",
+                "surface-container-high": "#10264A",
+                "primary-fixed": "#7AF2E3",
+                "on-primary-fixed": "#002022",
+                "on-error": "#690005",
+                "on-tertiary-fixed": "#002020",
+                "surface-container": "#10264A",
+                "surface-container-lowest": "#050d1d",
+                "surface-variant": "#2e3445",
+                "on-primary": "#00363a",
+                "surface-bright": "#32394a",
+                "on-error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "container-max": "1440px",
+                "glass-padding": "24px",
+                "unit": "8px",
+                "margin-page": "64px",
+                "gutter": "32px"
+            },
+            "fontFamily": {
+                "space": ["Space Grotesk", "sans-serif"],
+                "sora": ["Sora", "sans-serif"],
+                "inter": ["Inter", "sans-serif"],
+                "orbitron": ["Orbitron", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #08152E;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .liquid-glass {
+            backdrop-filter: blur(40px);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .glass-card-hover:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(70, 224, 208, 0.4);
+            transform: translateY(-5px);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .shimmer-button {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(70, 224, 208, 0.2), transparent);
+            transform: rotate(45deg);
+            pointer-events: none;
+            transition: all 0.6s ease;
+        }
+        .shimmer-button:hover::after {
+            left: 100%;
+        }
+        .energy-wave {
+            background: radial-gradient(circle at 50% 50%, rgba(70, 224, 208, 0.05) 0%, transparent 70%);
+        }
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(70, 224, 208, 0.3);
+        }
+        .heading-glow {
+            text-shadow: 0 0 15px rgba(70, 224, 208, 0.4);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .parallax-layer {
+            transition: transform 0.1s ease-out;
+        }
+    </style>
+</head>
+<body class="font-inter text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Global Background Elements -->
+<div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary-container/10 blur-[120px] rounded-full animate-pulse"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-secondary-container/10 blur-[150px] rounded-full"></div>
+<div class="absolute top-[20%] right-[10%] w-[30%] h-[40%] bg-tertiary-fixed/10 blur-[100px] rounded-full rotate-45"></div>
+<div class="energy-wave absolute inset-0 opacity-40"></div>
+</div>
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center px-8 h-20 w-full bg-[#08152E]/40 backdrop-blur-xl border-b border-white/5">
+<div class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-container to-secondary-container font-space tracking-tighter heading-glow">
+        CHERIF RAMZI
+    </div>
+<nav class="hidden md:flex items-center gap-8 font-orbitron text-[10px] tracking-widest">
+<a class="text-primary-container font-medium hover:opacity-100 transition-opacity" href="#work">WORK</a>
+<a class="text-slate-300/70 hover:text-white transition-colors" href="#about">ABOUT</a>
+<a class="text-slate-300/70 hover:text-white transition-colors" href="#skills">SKILLS</a>
+<a class="text-slate-300/70 hover:text-white transition-colors" href="#contact">CONTACT</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="shimmer-button bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-orbitron text-[10px] font-bold active:scale-95 transition-transform neon-glow">
+            LET'S TALK
+        </button>
+</div>
+</header>
+<main class="relative">
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col justify-center items-center px-margin-page relative overflow-visible">
+<div class="text-center z-10 max-w-4xl">
+<p class="font-orbitron text-secondary-fixed-dim tracking-[0.4em] mb-4 opacity-80 text-[10px] uppercase">Multidisciplinary Digital Creative from Tunisia</p>
+<h1 class="font-space font-bold text-white drop-shadow-2xl mb-8 tracking-tighter leading-[0.95] text-[clamp(48px,10vw,80px)] heading-glow">
+                CRAFTING<br/>DIGITAL WORLDS
+            </h1>
+<div class="flex flex-wrap justify-center gap-3 mt-8">
+<span class="liquid-glass px-5 py-2 rounded-full text-primary-container text-[10px] font-orbitron border-white/10 uppercase tracking-widest">Motion Designer</span>
+<span class="liquid-glass px-5 py-2 rounded-full text-secondary-fixed-dim text-[10px] font-orbitron border-white/10 uppercase tracking-widest">UX/UI Designer</span>
+<span class="liquid-glass px-5 py-2 rounded-full text-white text-[10px] font-orbitron border-white/10 uppercase tracking-widest">Web &amp; Game Dev</span>
+</div>
+<div class="mt-16">
+<a class="shimmer-button inline-block bg-white/5 hover:bg-primary-container hover:text-on-primary-container px-12 py-5 rounded-full border border-white/10 backdrop-blur-xl font-orbitron text-sm tracking-widest transition-all duration-500 shadow-xl group uppercase" href="#work">
+                    Explore My Work
+                    <span class="material-symbols-outlined align-middle ml-2 group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Decorative Parallax Elements -->
+<div class="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
+<!-- Floating Holographic Card -->
+<div class="absolute top-[25%] right-[12%] w-72 h-44 liquid-glass rounded-3xl border border-white/20 shadow-2xl rotate-3 flex items-center justify-center animate-bounce transition-transform duration-[4000ms]" style="animation-duration: 6s;">
+<div class="p-6 w-full">
+<div class="w-12 h-2 bg-primary-container/30 rounded-full mb-3"></div>
+<div class="w-24 h-2 bg-white/10 rounded-full mb-8"></div>
+<div class="flex gap-3">
+<div class="w-10 h-10 bg-primary-container/10 rounded-xl border border-primary-container/20"></div>
+<div class="w-10 h-10 bg-secondary-container/10 rounded-xl border border-secondary-container/20"></div>
+<div class="w-10 h-10 bg-tertiary-fixed/10 rounded-xl border border-tertiary-fixed/20"></div>
+</div>
+</div>
+<!-- Stitch Mascot Integration -->
+<div class="absolute -top-16 -right-10 w-36 h-36">
+<img alt="Stitch" class="w-full h-full object-contain drop-shadow-[0_10px_20px_rgba(70,224,208,0.4)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvc5BAhbPg6YuBVbd9LDnSbXMUcYFj0gOC73c_HOWsjr1pv9eYNWJuTaHIO3avnQMQfPbtscK0RdqLNY51GNHA2epBAa31TZcOWVNwFmDG6MMZK9lyv0E_oU0u3Ui1EREWF7ZdnRHrIACir4CLXnZe-8L390GkbxVxh5-_p_LxjMYES_3B3qnrP_tmJILCow9ALXfHXM9CqItUYWjGDOJ-rC5EnP_RUEvYIajYrbVNxSbkFu2DQXzrTQRh3N3eUkszVp1I7tLnURM"/>
+</div>
+</div>
+<div class="absolute bottom-[20%] left-[8%] w-48 h-14 liquid-glass rounded-full border border-white/10 flex items-center justify-center text-[10px] font-orbitron text-primary-container/60 -rotate-12 uppercase tracking-tighter">
+                Aetheric Fluidity v2.0
+            </div>
+<div class="absolute top-[15%] left-[15%] w-24 h-24 bg-primary-container/20 rounded-full blur-3xl animate-pulse"></div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-32 px-8 max-w-7xl mx-auto" id="about">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="relative group">
+<div class="aspect-square rounded-[40px] overflow-hidden liquid-glass border border-white/10 p-2">
+<div class="w-full h-full rounded-[32px] bg-gradient-to-br from-primary-container/20 to-surface-container-low flex items-center justify-center overflow-hidden">
+<img alt="Creative Visual" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG0TwwdfuAxxKFkdysY_HpzKpPHa-5a4ViZqPVH6HTlOV4pse3BkSqAFHbdiHGsCh3C10VtULgZDaZYF3czu90_uBr7wcfUavmOOrgPe6bwadJevfY0xIoP4tCJYgo0ISJJyw6MH47lSYrlM6PG6qJgiSf0H6Q7sw-_F6xTPeF6jDQqHl5ANJzH6Z3P6HQtWlEtiICvjlNEfDDEq9Mpye_eTP5Hg-8kQpwTaH9GC66eWgeeFd5BaIX2oCxF78UEMEHermSfdmUXkg"/>
+</div>
+</div>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 liquid-glass rounded-3xl border border-white/20 flex flex-col items-center justify-center rotate-12 neon-glow">
+<span class="font-orbitron text-3xl font-bold text-primary-container">6+</span>
+<p class="font-orbitron text-[8px] text-white/50 leading-none uppercase tracking-widest mt-1">Years<br/>Exp.</p>
+</div>
+</div>
+<div>
+<h2 class="font-space font-bold text-4xl text-white mb-10 heading-glow">About Me</h2>
+<p class="text-lg text-slate-300 leading-relaxed mb-10 font-inter">
+                    A passionate multidisciplinary digital artist and designer focused on creating immersive visual experiences, modern interfaces, motion graphics, and interactive digital products. Specialized in blending creativity with technology through UX/UI, branding, animation, VFX, and web development.
+                </p>
+<div class="grid grid-cols-2 gap-8">
+<div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+<h4 class="font-orbitron text-[9px] text-secondary-fixed-dim mb-2 uppercase tracking-widest">Base</h4>
+<p class="text-white font-sora">Tunisia</p>
+</div>
+<div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+<h4 class="font-orbitron text-[9px] text-secondary-fixed-dim mb-2 uppercase tracking-widest">Focus</h4>
+<p class="text-white font-sora">Creative Tech</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Grid -->
+<section class="py-32 px-8 max-w-7xl mx-auto" id="work">
+<h2 class="font-space font-bold text-4xl text-white mb-16 flex items-center gap-6 heading-glow">
+<span class="font-orbitron text-primary-container text-xl tracking-tighter">01.</span> Selected Works
+            <div class="h-[1px] flex-grow bg-white/10"></div>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="group relative rounded-3xl overflow-hidden liquid-glass glass-card-hover">
+<div class="aspect-[4/3] w-full bg-slate-900 overflow-hidden">
+<img alt="DCE VR Platform" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0vSJPyJWnI4qOiV24UvJEhKynYzwYbEVMuGFTDWnCklZlJeudzvDiSgs23JLDYsvGuxUM_CBrONPe8X7Yz-Ea5Y_85VoKQW-zFcS-H0oALaDyppzNIfEyYE2YDMGRMkmkTbrQHw2te5tLFzB2CXzBuclgbY0TEWR34Rk6msSQr4dC-X4LA6HSGg-Wj3-aFcYnDvRr_c_tQXft-jrG6Zk4c-6FQBki9jaFVYtRN6MuTveyh008UOCA-Xi1GxXuecycHxeqhXEKg5c"/>
+</div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-surface-dim to-transparent">
+<p class="font-orbitron text-[9px] text-primary-container mb-2 uppercase tracking-widest">VR Experience</p>
+<h3 class="font-sora text-white text-xl">DCE VR Platform</h3>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group relative rounded-3xl overflow-hidden liquid-glass glass-card-hover">
+<div class="aspect-[4/3] w-full bg-slate-900 overflow-hidden">
+<img alt="ROUE VR Game" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4ef3o5mhRZ_wKlo1lI3RKIyVEVfnAbWbG0N4L-3ipR7cfYMe9NdsKD13Gp2gY1cre_xdmtv9KWyHNTIYn1tN6hF7aTfCG3P0C2H7keKzvAckaONLFp1A6tUEtZlygGomD71LuDpdDKX0QWFOZUVd5YRjiJEedGX1iDWnrY2_l1mIe8yHXWK3QtSgHfG6ZISOUKX2GhqKJqW_Bo-UHNtiQ1U-Rg9ODL3pyTEUJIx1gMOsvMSMbmN08T_IHmY-Ifhf4TJ9YpxFhl9k"/>
+</div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-surface-dim to-transparent">
+<p class="font-orbitron text-[9px] text-primary-container mb-2 uppercase tracking-widest">Game Development</p>
+<h3 class="font-sora text-white text-xl">ROUE VR Game</h3>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group relative rounded-3xl overflow-hidden liquid-glass glass-card-hover">
+<div class="aspect-[4/3] w-full bg-slate-900 overflow-hidden">
+<img alt="Beb Medina" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa7sG7GusT-MXkM_SHkIFodd8rL0C-Y1ryuIlh9qD3G-iqSP6QwLHRSiWYybvYfTRyXHpHmfLrvHpnp8zb9E0JG3HutSIv4_UWZPcOgDIg35Y-WiEPdSNlb9l5NJxT69QYC_kj5Vk6KCE_MB4qVEHyJqHLFhX3ELuPGYvGW0iQKNhwruPAFO_0DA09mgrnABVWkyZpwI1kupWLHj9YI08_MzgMCzIfwk8yDRuFCoYOyYhrBtuxcgo8hLlxFrRQoe87nbKemxkWT1o"/>
+</div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-surface-dim to-transparent">
+<p class="font-orbitron text-[9px] text-primary-container mb-2 uppercase tracking-widest">Cultural App</p>
+<h3 class="font-sora text-white text-xl">Beb Medina</h3>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="group relative rounded-3xl overflow-hidden liquid-glass glass-card-hover">
+<div class="aspect-[4/3] w-full bg-slate-900 overflow-hidden">
+<div class="w-full h-full bg-gradient-to-br from-[#10264A] to-[#08152E] flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-primary-container/20" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+</div>
+</div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-surface-dim to-transparent">
+<p class="font-orbitron text-[9px] text-primary-container mb-2 uppercase tracking-widest">Product Design</p>
+<h3 class="font-sora text-white text-xl">Sastra Solar Energy</h3>
+</div>
+</div>
+<!-- Project 5 -->
+<div class="group relative rounded-3xl overflow-hidden liquid-glass glass-card-hover">
+<div class="aspect-[4/3] w-full bg-slate-900 overflow-hidden">
+<div class="w-full h-full bg-gradient-to-br from-[#10264A] to-[#08152E] flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-secondary-fixed-dim/20" data-icon="blur_on">blur_on</span>
+</div>
+</div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-surface-dim to-transparent">
+<p class="font-orbitron text-[9px] text-primary-container mb-2 uppercase tracking-widest">Brand Identity</p>
+<h3 class="font-sora text-white text-xl">Bloetime</h3>
+</div>
+</div>
+<!-- Project 6 -->
+<div class="group relative rounded-3xl overflow-hidden liquid-glass glass-card-hover">
+<div class="aspect-[4/3] w-full bg-slate-900 overflow-hidden">
+<div class="w-full h-full bg-gradient-to-br from-[#10264A] to-[#08152E] flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-white/10" data-icon="home_work">home_work</span>
+</div>
+</div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-surface-dim to-transparent">
+<p class="font-orbitron text-[9px] text-primary-container mb-2 uppercase tracking-widest">Branding</p>
+<h3 class="font-sora text-white text-xl">Ben Amara Immobilére</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="py-32 px-8 bg-[#10264A]/30 relative border-y border-white/5" id="skills">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-space font-bold text-4xl text-white mb-20 text-center heading-glow">The Artisan's Toolkit</h2>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-12">
+<!-- Skill Icons -->
+<div class="flex flex-col items-center gap-5 group">
+<div class="w-24 h-24 liquid-glass rounded-[28px] flex items-center justify-center border border-white/10 group-hover:border-primary-container/50 group-hover:scale-110 transition-all duration-300 neon-glow">
+<span class="text-primary-container font-orbitron font-bold text-sm">Ps</span>
+</div>
+<span class="font-orbitron text-slate-400 text-[10px] uppercase tracking-widest group-hover:text-white transition-colors">Photoshop</span>
+</div>
+<div class="flex flex-col items-center gap-5 group">
+<div class="w-24 h-24 liquid-glass rounded-[28px] flex items-center justify-center border border-white/10 group-hover:border-primary-container/50 group-hover:scale-110 transition-all duration-300">
+<span class="text-primary-container font-orbitron font-bold text-sm">Ai</span>
+</div>
+<span class="font-orbitron text-slate-400 text-[10px] uppercase tracking-widest group-hover:text-white transition-colors">Illustrator</span>
+</div>
+<div class="flex flex-col items-center gap-5 group">
+<div class="w-24 h-24 liquid-glass rounded-[28px] flex items-center justify-center border border-white/10 group-hover:border-primary-container/50 group-hover:scale-110 transition-all duration-300">
+<span class="text-primary-container font-orbitron font-bold text-sm">Ae</span>
+</div>
+<span class="font-orbitron text-slate-400 text-[10px] uppercase tracking-widest group-hover:text-white transition-colors">After Effects</span>
+</div>
+<div class="flex flex-col items-center gap-5 group">
+<div class="w-24 h-24 liquid-glass rounded-[28px] flex items-center justify-center border border-white/10 group-hover:border-primary-container/50 group-hover:scale-110 transition-all duration-300">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="3d_rotation">3d_rotation</span>
+</div>
+<span class="font-orbitron text-slate-400 text-[10px] uppercase tracking-widest group-hover:text-white transition-colors">Blender</span>
+</div>
+<div class="flex flex-col items-center gap-5 group">
+<div class="w-24 h-24 liquid-glass rounded-[28px] flex items-center justify-center border border-white/10 group-hover:border-primary-container/50 group-hover:scale-110 transition-all duration-300">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="grid_view">grid_view</span>
+</div>
+<span class="font-orbitron text-slate-400 text-[10px] uppercase tracking-widest group-hover:text-white transition-colors">Figma</span>
+</div>
+<div class="flex flex-col items-center gap-5 group">
+<div class="w-24 h-24 liquid-glass rounded-[28px] flex items-center justify-center border border-white/10 group-hover:border-primary-container/50 group-hover:scale-110 transition-all duration-300">
+<span class="text-primary-container font-orbitron font-bold text-sm">JS</span>
+</div>
+<span class="font-orbitron text-slate-400 text-[10px] uppercase tracking-widest group-hover:text-white transition-colors">ReactJS</span>
+</div>
+<div class="flex flex-col items-center gap-5 group">
+<div class="w-24 h-24 liquid-glass rounded-[28px] flex items-center justify-center border border-white/10 group-hover:border-primary-container/50 group-hover:scale-110 transition-all duration-300">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="videogame_asset">videogame_asset</span>
+</div>
+<span class="font-orbitron text-slate-400 text-[10px] uppercase tracking-widest group-hover:text-white transition-colors">Unity</span>
+</div>
+<div class="flex flex-col items-center gap-5 group">
+<div class="w-24 h-24 liquid-glass rounded-[28px] flex items-center justify-center border border-white/10 group-hover:border-primary-container/50 group-hover:scale-110 transition-all duration-300">
+<span class="text-primary-container font-orbitron font-bold text-sm">TW</span>
+</div>
+<span class="font-orbitron text-slate-400 text-[10px] uppercase tracking-widest group-hover:text-white transition-colors">Tailwind</span>
+</div>
+<div class="flex flex-col items-center gap-5 group">
+<div class="w-24 h-24 liquid-glass rounded-[28px] flex items-center justify-center border border-white/10 group-hover:border-primary-container/50 group-hover:scale-110 transition-all duration-300">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="database">database</span>
+</div>
+<span class="font-orbitron text-slate-400 text-[10px] uppercase tracking-widest group-hover:text-white transition-colors">MongoDB</span>
+</div>
+<div class="flex flex-col items-center gap-5 group">
+<div class="w-24 h-24 liquid-glass rounded-[28px] flex items-center justify-center border border-white/10 group-hover:border-primary-container/50 group-hover:scale-110 transition-all duration-300">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="code">code</span>
+</div>
+<span class="font-orbitron text-slate-400 text-[10px] uppercase tracking-widest group-hover:text-white transition-colors">Full Stack</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-32 px-8" id="contact">
+<div class="max-w-5xl mx-auto">
+<div class="liquid-glass p-12 md:p-20 rounded-[40px] border border-white/10 relative overflow-hidden">
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary-container/10 blur-[80px] rounded-full"></div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+<div>
+<h2 class="font-space font-bold text-4xl text-white mb-8 heading-glow">Let's create the future.</h2>
+<p class="text-slate-400 text-lg mb-12 font-inter">
+                            Currently accepting new projects for Q3 2024. Let's build something weightless.
+                        </p>
+<div class="space-y-8">
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container" data-icon="mail">mail</span>
+</div>
+<div>
+<p class="font-orbitron text-[9px] text-slate-500 uppercase tracking-widest">Email Me</p>
+<p class="text-white font-sora">hello@cheriframzi.com</p>
+</div>
+</div>
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container" data-icon="location_on">location_on</span>
+</div>
+<div>
+<p class="font-orbitron text-[9px] text-slate-500 uppercase tracking-widest">Location</p>
+<p class="text-white font-sora">Tunisia</p>
+</div>
+</div>
+</div>
+</div>
+<form class="space-y-8">
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-orbitron text-[9px] text-slate-400 uppercase tracking-widest">Name</label>
+<input class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white font-inter placeholder:text-white/10 focus:border-primary-container focus:ring-0 transition-all outline-none" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-orbitron text-[9px] text-slate-400 uppercase tracking-widest">Email</label>
+<input class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white font-inter placeholder:text-white/10 focus:border-primary-container focus:ring-0 transition-all outline-none" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-orbitron text-[9px] text-slate-400 uppercase tracking-widest">Message</label>
+<textarea class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white font-inter placeholder:text-white/10 focus:border-primary-container focus:ring-0 transition-all outline-none h-40" placeholder="Tell me about your project..."></textarea>
+</div>
+<button class="shimmer-button w-full bg-primary-container text-on-primary-container py-5 rounded-2xl font-orbitron text-sm font-bold tracking-[0.2em] transition-transform active:scale-95 neon-glow uppercase">
+                            Send Message
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col items-center gap-8 w-full max-w-7xl mx-auto px-8 py-20 border-t border-white/5 bg-transparent">
+<div class="font-space font-bold text-white/5 text-7xl tracking-tighter heading-glow">CHERIF RAMZI</div>
+<div class="flex gap-12 font-orbitron text-[10px] tracking-widest">
+<a class="text-slate-500 hover:text-primary-container transition-colors flex items-center gap-2 uppercase" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="link">link</span> Behance
+        </a>
+<a class="text-slate-500 hover:text-primary-container transition-colors flex items-center gap-2 uppercase" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="code">code</span> GitHub
+        </a>
+<a class="text-slate-500 hover:text-primary-container transition-colors flex items-center gap-2 uppercase" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="diversity_3">diversity_3</span> LinkedIn
+        </a>
+</div>
+<p class="text-slate-500 font-orbitron text-[8px] uppercase tracking-widest mt-4">© 2024 Cherif Ramzi. Designed with Aetheric Fluidity.</p>
+</footer>
+<!-- BottomNavBar (The Dock) -->
+<nav class="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 flex gap-12 items-center bg-white/5 backdrop-blur-3xl w-auto rounded-full border border-white/10 px-12 py-5 shadow-2xl md:flex hidden">
+<a class="flex flex-col items-center justify-center text-primary-container drop-shadow-[0_0_8px_rgba(70,224,208,0.6)] transition-all scale-110" href="#work">
+<span class="material-symbols-outlined" data-icon="work_outline">work_outline</span>
+<span class="font-orbitron text-[7px] mt-1 uppercase tracking-widest">Work</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 opacity-60 hover:opacity-100 hover:scale-105 transition-all" href="#about">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-orbitron text-[7px] mt-1 uppercase tracking-widest">About</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 opacity-60 hover:opacity-100 hover:scale-105 transition-all" href="#skills">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+<span class="font-orbitron text-[7px] mt-1 uppercase tracking-widest">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 opacity-60 hover:opacity-100 hover:scale-105 transition-all" href="#contact">
+<span class="material-symbols-outlined" data-icon="alternate_email">alternate_email</span>
+<span class="font-orbitron text-[7px] mt-1 uppercase tracking-widest">Contact</span>
+</a>
+</nav>
+<!-- Mobile Bottom Nav -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex md:hidden justify-around items-center bg-[#08152E]/80 backdrop-blur-3xl border-t border-white/10 px-4 py-4">
+<a class="text-primary-container flex flex-col items-center" href="#work">
+<span class="material-symbols-outlined" data-icon="work_outline">work_outline</span>
+<span class="font-orbitron text-[8px] mt-1 uppercase tracking-widest">Work</span>
+</a>
+<a class="text-white/40 flex flex-col items-center" href="#skills">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+<span class="font-orbitron text-[8px] mt-1 uppercase tracking-widest">Skills</span>
+</a>
+<a class="text-white/40 flex flex-col items-center" href="#contact">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-orbitron text-[8px] mt-1 uppercase tracking-widest">Contact</span>
+</a>
+</nav>
+<script>
+    // Parallax Effect
+    document.addEventListener('mousemove', (e) => {
+        const layers = document.querySelectorAll('.parallax-layer');
+        const x = (window.innerWidth - e.pageX * 2) / 100;
+        const y = (window.innerHeight - e.pageY * 2) / 100;
+
+        layers.forEach(layer => {
+            const speed = layer.getAttribute('data-speed') || 1;
+            layer.style.transform = `translateX(${x * speed}px) translateY(${y * speed}px)`;
+        });
+    });
+</script>
+</body></html>
